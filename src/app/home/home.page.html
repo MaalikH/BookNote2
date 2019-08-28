@@ -1,14 +1,27 @@
+<!-- HEADER -->
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      BOOKNOTES
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
-</ion-content>
+<!-- CONTENT -->
+  <ion-content fullscreen padding scroll-y="false">
+    <!-- SLIDES -->
+    <ion-slides>
+      <div *ngFor="let book of bookCollection">
+        <!-- WITH BOOK COVER SLIDE -->
+        <app-book-card-with-cover *ngIf="book.volumeInfo.imageLinks" [book]="book"></app-book-card-with-cover>
+        <!-- WITHOUT BOOK COVER SLIDE -->
+        <app-book-card-without-cover *ngIf="!book.volumeInfo.imageLinks" [book]="book"></app-book-card-without-cover>
+      </div>
+    </ion-slides>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="light" (click)="presentModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>

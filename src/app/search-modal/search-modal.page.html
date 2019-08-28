@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar class="searchToolbar">
+    <ion-searchbar showCancelButton="always" (ionCancel)="dismiss()" (ionChange)="searchChanged($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="inset" inset="true" *ngIf="bookSearch">
+    <ion-item *ngFor="let book of bookSearch.items" (click)="goToBookDetails(book)">
+        <ion-thumbnail class="ion-padding-vertical">
+          <img *ngIf="book.volumeInfo?.imageLinks?.smallThumbnail" class="bookCover" [src]="book.volumeInfo?.imageLinks.smallThumbnail">
+        </ion-thumbnail>
+        <ion-label position="floated" class="ion-padding-start">
+          <h2>{{book.volumeInfo?.title}}</h2>
+          <h4 *ngIf="book.volumeInfo.authors"> {{ book.volumeInfo?.authors[0]}}</h4>
+        </ion-label>
+      <ion-icon slot="end" name="add"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

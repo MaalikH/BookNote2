@@ -1,0 +1,38 @@
+.bookType2 {
+  display: flex;
+  flex-direction: column;
+
+  .book-details {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .book-details-title {
+    // font-size: 2em;
+    font-size: .7em;
+  }
+
+  .book-desc {
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-desc {
+    background-color: transparent;
+    box-shadow: none;
+    color: white;
+  }
+
+  .add-book-cover {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+      font-size: 2em;
+    }
+  }
+}

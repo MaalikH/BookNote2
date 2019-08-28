@@ -1,0 +1,33 @@
+<ion-slide class="bookType2">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md>
+        <ion-card class="ion-text-left add-book-cover">
+          <ion-fab vertical="center" horizontal="center" slot="fixed">
+            <ion-fab-button color="light">
+              <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-card>
+        <ion-card class="ion-text-left text-desc">
+          <h1>{{book.volumeInfo.title}}</h1>
+          <h3>{{book.volumeInfo.authors[0]}}</h3>
+          <div class="book-details">
+            <div>
+              <h1 class="book-desc">
+                <span>10</span>
+                <span class="book-details-title">CHAPTERS</span>
+              </h1>
+            </div>
+            <div>
+              <h1 class="book-desc">
+                <span>1000</span>
+                <span class="book-details-title">PAGES</span>
+              </h1>
+            </div>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-slide>
